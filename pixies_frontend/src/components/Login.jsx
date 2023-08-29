@@ -4,11 +4,14 @@ import {
   GoogleLogin,
   googleLogout,
 } from "@react-oauth/google";
+import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
-// import { FcGoogle } from "react-icons/fc";
 import logo from "../assets/logo.png";
+import { client } from "../client";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const user = false;
   return (
     <div className="flex justify-start items-center flex-col h-screen">
@@ -40,7 +43,19 @@ const Login = () => {
                 ) : (
                   <GoogleLogin
                     onSuccess={(credentialResponse) => {
-                      console.log(credentialResponse);
+                      const decoded = jwt_decode(credentialResponse.credential);
+                      const { name, picture, sub } = decoded;
+
+                      const doc = {
+                        _id: sub, //googleId
+                        _type: "user",
+                        userName: name,
+                        image: picture, //imageUrl
+                      };
+
+                      client.createIfNotExists(doc).then(() => {
+                        navigate("/");
+                      });
                     }}
                     onError={() => {
                       console.log("Login Failed");
