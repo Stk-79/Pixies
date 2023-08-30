@@ -12,7 +12,6 @@ import { client } from "../client";
 const Login = () => {
   const navigate = useNavigate();
 
-  const user = false;
   return (
     <div className="flex justify-start items-center flex-col h-screen">
       <div className="relative w-full h-full">
@@ -38,30 +37,34 @@ const Login = () => {
               clientId={`${process.env.REACT_APP_GOOGLE_API_TOKEN}`}
             >
               <div>
-                {user ? (
-                  <div>Logged In</div>
-                ) : (
-                  <GoogleLogin
-                    onSuccess={(credentialResponse) => {
-                      const decoded = jwt_decode(credentialResponse.credential);
-                      const { name, picture, sub } = decoded;
+                <GoogleLogin
+                  onSuccess={(credentialResponse) => {
+                    const decoded = jwt_decode(credentialResponse.credential);
+                    const { name, picture, sub } = decoded;
 
-                      const doc = {
-                        _id: sub, //googleId
-                        _type: "user",
-                        userName: name,
-                        image: picture, //imageUrl
-                      };
+                    const USER = {
+                      name: name,
+                      picture: picture,
+                      sub: sub,
+                    };
+                    localStorage.setItem("user", JSON.stringify(USER));
 
-                      client.createIfNotExists(doc).then(() => {
-                        navigate("/");
-                      });
-                    }}
-                    onError={() => {
-                      console.log("Login Failed");
-                    }}
-                  />
-                )}
+                    //In Old GoogleAUTH -> response gives profileObj:{googleId,name,imageUrl}
+                    const doc = {
+                      _id: sub, //googleId
+                      _type: "user",
+                      userName: name,
+                      image: picture, //imageUrl
+                    };
+
+                    client.createIfNotExists(doc).then(() => {
+                      navigate("/");
+                    });
+                  }}
+                  onError={() => {
+                    console.log("Login Failed");
+                  }}
+                />
               </div>
             </GoogleOAuthProvider>
           </div>
