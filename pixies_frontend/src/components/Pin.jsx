@@ -87,7 +87,9 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                   }}
                   type="button"
                   className="bg-red-500 opacity-70 hover:opacity-100 text-white font-bold px-1 py-1 text-base rounded-lg hover:shadow-md outlined-none"
-                ></button>
+                >
+                  Save
+                </button>
               )}
             </div>
             <div className="flex justify-between items-center gap-2 w-full">
