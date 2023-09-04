@@ -28,7 +28,7 @@ const Search = ({ searchTerm }) => {
 
   return (
     <div>
-      {loading && <Spinner message="searching for Pins."></Spinner>}
+      {loading && <Spinner message="Searching for Pins."></Spinner>}
       {pins?.length !== 0 && <MasonryLayout pins={pins}></MasonryLayout>}
       {pins?.length === 0 && searchTerm !== "" && !loading && (
         <div className="mt-10 text-center text-xl">No Pins Found</div>

@@ -20,14 +20,14 @@ const PinDetail = ({ user }) => {
       setAddingComment(true);
       client
         .patch(pinId)
-        .setIfMissing({ comment: [] })
+        .setIfMissing({ comments: [] })
         .insert("after", "comments[-1]", [
           {
             comment,
             _key: uuidv4(),
             postedBy: {
               _type: "postedBy",
-              _ref: user.id,
+              _ref: user._id,
             },
           },
         ])
@@ -117,12 +117,12 @@ const PinDetail = ({ user }) => {
                 key={i}
               >
                 <img
-                  src={comment.postedBy.image}
+                  src={comment.postedBy?.image}
                   alt="user-profile"
                   className="w-10 h-10 rounded-full cursor-pointer"
                 ></img>
                 <div className="flex flex-col">
-                  <p className="font-bold">{comment.postedBy.userName}</p>
+                  <p className="font-bold">{comment.postedBy?.userName}</p>
                   <p>{comment.comment}</p>
                 </div>
               </div>
