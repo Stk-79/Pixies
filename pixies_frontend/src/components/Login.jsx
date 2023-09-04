@@ -2,7 +2,6 @@ import React from "react";
 import {
   GoogleOAuthProvider,
   GoogleLogin,
-  googleLogout,
 } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
