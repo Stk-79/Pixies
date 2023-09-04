@@ -132,7 +132,7 @@ const PinDetail = ({ user }) => {
             <Link to={`user-profile/${pinDetail.postedBy?._id}`}>
               <img
                 className="w-10 h-10 rounded-full cursor-pointer"
-                src={pinDetail.postedBy?.image}
+                src={user.image}
                 alt="user-profile"
               ></img>
             </Link>
