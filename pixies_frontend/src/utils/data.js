@@ -129,8 +129,8 @@ export const pinDetailMorePinQuery = (pin) => {
   return query;
 };
 
-export const userQuery = (userId) => {
-  const query = `*[_type == "user" && _id== '${userId}']`;
+export const userQuery = (userID) => {
+  const query = `*[_type == "user" && _id== '${userID}']`;
   return query;
 };
 
@@ -184,8 +184,8 @@ export const feedQuery = `*[_type=="pin"] | order(_createAt desc){
   },
 }`;
 
-export const userCreatedPinsQuery = (userId) => {
-  const query = `*[ _type == 'pin' && userId == '${userId}'] | order(_createdAt desc){
+export const userCreatedPinsQuery = (userID) => {
+  const query = `*[ _type == 'pin' && userID == '${userID}'] | order(_createdAt desc){
     image{
       asset->{
         url
@@ -209,8 +209,8 @@ export const userCreatedPinsQuery = (userId) => {
   return query;
 };
 
-export const userSavedPinsQuery = (userId) => {
-  const query = `*[_type == 'pin' && '${userId}' in save[].userId ] | order(_createdAt desc) {
+export const userSavedPinsQuery = (userID) => {
+  const query = `*[_type == 'pin' && '${userID}' in save[].userID ] | order(_createdAt desc) {
     image{
       asset->{
         url

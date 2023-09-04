@@ -26,31 +26,31 @@ const UserProfile = () => {
   const [text, setText] = useState("Created");
   const [activeBtn, setActiveBtn] = useState("created");
   const navigate = useNavigate();
-  const { userId } = useParams();
+  const { userID } = useParams();
 
   useEffect(() => {
-    const query = userQuery(userId);
+    const query = userQuery(userID);
 
     client.fetch(query).then((data) => {
       setUser(data[0]);
     });
-  }, [userId]);
+  }, [userID]);
 
   useEffect(() => {
     if (text === "Created") {
-      const createdPinsQuery = userCreatedPinsQuery(userId);
+      const createdPinsQuery = userCreatedPinsQuery(userID);
 
       client.fetch(createdPinsQuery).then((data) => {
         setPins(data);
       });
     } else {
-      const savedPinsQuery = userSavedPinsQuery(userId);
+      const savedPinsQuery = userSavedPinsQuery(userID);
 
       client.fetch(savedPinsQuery).then((data) => {
         setPins(data);
       });
     }
-  }, [text, userId]);
+  }, [text, userID]);
 
   const removeUser = () => {
     localStorage.clear();
@@ -79,7 +79,7 @@ const UserProfile = () => {
             {user.userName}
           </h1>
           <div className="absolute top-0 z-1 right-0 p-2">
-            {userId === user._id && (
+            {userID === user._id && (
               <GoogleOAuthProvider
                 clientId={`${process.env.REACT_APP_GOOGLE_API_TOKEN}`}
               >
