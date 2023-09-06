@@ -1,45 +1,39 @@
-# Pixies
+# Pixies 🏞️
 
-A Social Media App to share your awesome photos and views.
+A full stack Social Media App to share your awesome photos.
 
 ## 🖼️ Website Link- <a href="https://sharemestk.netlify.app/">Pixies</a>
 
-## Getting Started with Create React App
+## 🪴 Features : <a name = "features"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Complete User Authentication
+- Upload photos
+- Download any photo
+- Comment or Save on user posts
+- Search for images
 
-In the project directory, you can run:
+## 🎴 App Results : <a name = "app-results"></a>
 
-> ### `npm start`
+![Shot-1](/site_images/Shot-1.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Shot-2](/site_images/Shot-2.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Shot-3](/site_images/Shot-3.png)
 
-> ### `npm run build`
+![Shot-4](/site_images/Shot-4.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<hr>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🔧 Tech-Stack : <a name = "tech-stack"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Reactjs](https://img.shields.io/badge/react.js%20-%23323330.svg?&style=for-the-badge&logo=react&logoColor=blue) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Tailwind](https://img.shields.io/badge/tailwind%20-%23323330.svg?&style=for-the-badge&logo=tailwindcss&logoColor=%blue) ![NPM](https://img.shields.io/badge/npm%20-%23323330.svg?&style=for-the-badge&logo=npm&logoColor=%red) ![Sanity](https://img.shields.io/badge/sanity%20-%23323330.svg?&style=for-the-badge&logo=sanity&logoColor=%red) ![JWT](https://img.shields.io/badge/JWT-%23323330?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=lightgreen) ![Netlify](https://img.shields.io/badge/netlify-%23323330.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) ![Markdown](https://img.shields.io/badge/markdown-%23323330.svg?style=for-the-badge&logo=markdown&logoColor=green)
 
-### Learn More
+[(Back to top)](#pixies-🏞️)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## ✅ Supported Browsers : <a name = "supported-browsers"></a>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Brave](https://img.shields.io/badge/Brave-FB542B?style=for-the-badge&logo=Brave&logoColor=white) ![Edge](https://img.shields.io/badge/Edge-0078D7?style=for-the-badge&logo=Microsoft-edge&logoColor=white) ![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white) ![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white)
 
-# Sanity Clean Content Studio
+- `Note:` To learn React, check out the [React documentation](https://reactjs.org/).
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
-
-Now you can do the following things:
-
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+[(Back to top)](#pixies-🏞️)
